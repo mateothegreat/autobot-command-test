@@ -17,30 +17,30 @@ export class TestCommand extends CommandBase {
         super({
 
             event: Event.MESSAGE,
-            name: '>test',
+            pattern: '^"',
             group: 'testing',
             description: 'Simple test command that sends a reply if validation succeeds.',
-            params: [ {
-
-                name: 'chars',
-                description: 'An argument containing a word.',
-                required: true,
-                pattern: '[a-zA-Z]+'
-
-            }, {
-
-                name: 'num',
-                description: 'An argument containing numbers.',
-                required: true,
-                pattern: '\\d+'
-
-            }, {
-
-                name: 'opt',
-                description: 'An optional argument.',
-                required: false,
-
-            } ]
+            // params: [ {
+            //
+            //     name: 'chars',
+            //     description: 'An argument containing a word.',
+            //     required: true,
+            //     pattern: '[a-zA-Z]+'
+            //
+            // }, {
+            //
+            //     name: 'num',
+            //     description: 'An argument containing numbers.',
+            //     required: true,
+            //     pattern: '\\d+'
+            //
+            // }, {
+            //
+            //     name: 'opt',
+            //     description: 'An optional argument.',
+            //     required: false,
+            //
+            // } ]
 
         });
 
