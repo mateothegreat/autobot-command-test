@@ -17,6 +17,7 @@ export class TestCommand extends CommandBase {
         super({
 
             event: Event.MESSAGE,
+            name: '"',
             pattern: '^"',
             group: 'testing',
             description: 'Simple test command that sends a reply if validation succeeds.',
