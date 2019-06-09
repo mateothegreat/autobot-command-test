@@ -2,9 +2,9 @@ import { Command, CommandBase, CommandParser, Event } from '@autobot/common';
 import { RichEmbed }                                  from 'discord.js';
 
 /**
- * Demonstrates a simple command that uses arguments.
+ * Demonstrates a simple command that replies to a test.
  *
- * Example message: `>test chars=abc,num=123,opt=hellow world`
+ * Example message: `>test`
  */
 @Command
 export class TestCommand extends CommandBase {
@@ -17,30 +17,9 @@ export class TestCommand extends CommandBase {
         super({
 
             event: Event.MESSAGE,
-            pattern: '^"',
+            name: '>test',
             group: 'testing',
-            description: 'Simple test command that sends a reply if validation succeeds.',
-            // params: [ {
-            //
-            //     name: 'chars',
-            //     description: 'An argument containing a word.',
-            //     required: true,
-            //     pattern: '[a-zA-Z]+'
-            //
-            // }, {
-            //
-            //     name: 'num',
-            //     description: 'An argument containing numbers.',
-            //     required: true,
-            //     pattern: '\\d+'
-            //
-            // }, {
-            //
-            //     name: 'opt',
-            //     description: 'An optional argument.',
-            //     required: false,
-            //
-            // } ]
+            description: 'Simple test command that sends a reply.',
 
         });
 
@@ -55,7 +34,6 @@ export class TestCommand extends CommandBase {
     public run(command: CommandParser): void {
 
         command.obj.reply(new RichEmbed().setTitle('Test received!'));
-        // .setDescription(`argument 1: ${ command.arguments[ 0 ].name }=${ command.arguments[ 0 ].value }\nargument 2: ${ command.arguments[ 1 ].name }=${ command.arguments[ 1 ].value }`));
 
     }
 
